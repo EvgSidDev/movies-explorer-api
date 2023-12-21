@@ -19,7 +19,7 @@ router.post(
           .pattern(
             /https?:\/\/[a-z1-9\-\.\/\_\~\:\\\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]*/,
           ),
-        trailer: Joi.string()
+        trailerLink: Joi.string()
           .required()
           .pattern(
             /https?:\/\/[a-z1-9\-\.\/\_\~\:\\\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]*/,
@@ -41,7 +41,7 @@ router.delete(
   '/:moviesId',
   celebrate({
     params: Joi.object().keys({
-      cardId: Joi.string().required().length(24).hex(),
+      moviesId: Joi.string().required().length(24).hex(),
     }),
   }),
   deleteMovies,

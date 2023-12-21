@@ -32,7 +32,7 @@ router.post(
 router.use(require('../middlewares/auth'));
 
 router.use('/users', require('./users'));
-router.use('/films', require('./movies'));
+router.use('/movies', require('./movies'));
 
 router.use('*', (req, res, next) => {
   next(new NotFoundError('Запрашиваемый ресурс не найден'));
